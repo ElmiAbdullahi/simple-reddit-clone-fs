@@ -1,4 +1,4 @@
-## The Golden Rule:
+![](/assets/reddit-clone-wf.png)
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
 
