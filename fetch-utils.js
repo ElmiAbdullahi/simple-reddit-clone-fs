@@ -27,8 +27,18 @@ export async function signOutUser() {
     return await client.auth.signOut();
 }
 
-export async function createPost() {
-    return await client.from('post').insert(post).single();
+export async function createPost(post) {
+    return await client.from('reddit').insert(post).single();
+}
+
+export async function getPost(title) {
+    let query = client.from('reddit').select('*').limit(200);
+
+    if (title) {
+        query = query.ilike('name', `%${title}%`);
+    }
+
+    return await query;
 }
 
 /* Data functions */

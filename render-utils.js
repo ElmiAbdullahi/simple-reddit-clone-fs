@@ -11,7 +11,7 @@ export function renderPost(post) {
     h2.textContent = post.title;
 
     const span = document.createElement('span');
-    // span.textContent = getCategoryEmoji(post.category);
+    span.textContent = getCategoryEmoji(post.category);
     h2.append(span);
 
     const p = document.createElement('p');
@@ -21,4 +21,12 @@ export function renderPost(post) {
     li.append(a);
 
     return li;
+}
+
+function getCategoryEmoji(category) {
+    if (category === 'cars') return '🚘';
+    if (category === 'food') return '🍔';
+    if (category === 'music') return '🎸';
+    if (category === 'clothes') return '👔';
+    return '❓';
 }
