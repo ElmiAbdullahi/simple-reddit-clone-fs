@@ -25,7 +25,7 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <link rel="stylesheet" href="/post-editor/post-editor.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
 
         <!-- add link for page specific css -->
     </head>
@@ -49,11 +49,7 @@
 
                 <label>
                     <div>Description</div>
-                    <textarea
-                        name="description"
-                        required
-                        placeholder="Enter the description"
-                    ></textarea>
+                    <textarea name="description" placeholder="Enter the description"></textarea>
                 </label>
 
                 <label>
@@ -69,16 +65,24 @@
 
                 <label>
                     <div>Image</div>
-                    <input id="image-input" name="image" required placeholder="Upload an image" />
+                    <input
+                        id="image-input"
+                        name="image"
+                        type="file"
+                        required
+                        placeholder="Upload an image..."
+                    />
                 </label>
                 <img
                     id="preview"
                     class="preview"
-                    alt="avatar preview"
+                    alt="place preview"
                     src="../assets/post-image-placeholder.png"
                 />
 
                 <button>Add Post</button>
+
+                <p id="error-display"></p>
             </form>
         </main>
     </body>
