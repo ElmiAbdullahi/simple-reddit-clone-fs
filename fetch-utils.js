@@ -31,7 +31,7 @@ export async function createPost(post) {
     return await client.from('reddit').insert(post).single();
 }
 
-export async function getPost(title) {
+export async function getPosts(title) {
     let query = client.from('reddit').select('*').limit(200);
 
     if (title) {
@@ -40,5 +40,12 @@ export async function getPost(title) {
 
     return await query;
 }
-
+export async function getPost(id) {
+    return await client
+        .from('posts')
+        .select('*, comments(*)')
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comment', ascending: false })
+        .single();
+}
 /* Data functions */
