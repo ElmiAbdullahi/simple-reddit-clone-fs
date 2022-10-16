@@ -1,8 +1,8 @@
 export function renderPost(post) {
     const li = document.createElement('li');
 
-    const a = document.createElement('a');
-    a.href = `/post/?id=${post.id}`;
+    // const a = document.createElement('a');
+    // a.href = `/post/?id=${post.id}`;
 
     const img = document.createElement('img');
     img.src = post.image_url;
@@ -17,8 +17,8 @@ export function renderPost(post) {
     const p = document.createElement('p');
     p.textContent = post.description;
 
-    a.append(img, h2, p);
-    li.append(a);
+    // a.append(img, h2, p);
+    li.append(img, h2, p);
 
     return li;
 }
