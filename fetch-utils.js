@@ -31,21 +31,21 @@ export async function createPost(post) {
     return await client.from('reddit').insert(post).single();
 }
 
-export async function getPosts(title) {
-    let query = client.from('reddit').select('*').limit(200);
+export async function getPosts() {
+    return await client.from('reddit').select('*');
 
-    if (title) {
-        query = query.ilike('name', `%${title}%`);
-    }
+    // if (title) {
+    //     query = query.ilike('name', `%${title}%`);
+    // }
 
-    return await query;
+    // return await query;
 }
 export async function getPost(id) {
     return await client
         .from('posts')
         .select('*, comments(*)')
         .eq('id', id)
-        .order('created_at', { foreignTable: 'comment', ascending: false })
+        .order('created_at', { foreignTable: 'comments', ascending: false })
         .single();
 }
 /* Data functions */

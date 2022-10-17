@@ -2,8 +2,8 @@ import { createPost, uploadImage } from '../fetch-utils.js';
 
 const postForm = document.getElementById('post-form');
 const errorDisplay = document.getElementById('error-display');
-const imageInput = document.getElementById('image-input');
-const preview = document.getElementById('preview');
+// const imageInput = document.getElementById('image-input');
+// const preview = document.getElementById('preview');
 const addBtn = document.querySelectorAll('button');
 
 // State
